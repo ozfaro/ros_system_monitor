@@ -9,20 +9,20 @@
   <arg name="ntp_monitor" default="false" />
   <arg name="net_monitor" default="false" />
 
-  <group ns="system_monitor/$(arg machine_name)">
-    <node name="cpu_monitor" pkg="system_monitor" type="cpu_monitor.py"
+  <group ns="ros_system_monitor/$(arg machine_name)">
+    <node name="cpu_monitor" pkg="ros_system_monitor" type="cpu_monitor.py"
       output="$(arg output)" respawn="true" if="$(arg cpu_monitor)"/>
-    <node name="hdd_monitor" pkg="system_monitor" type="hdd_monitor.py"
+    <node name="hdd_monitor" pkg="ros_system_monitor" type="hdd_monitor.py"
       output="$(arg output)" respawn="true" if="$(arg hdd_monitor)"/>
-    <node name="mem_monitor" pkg="system_monitor" type="mem_monitor.py"
+    <node name="mem_monitor" pkg="ros_system_monitor" type="mem_monitor.py"
       output="$(arg output)" respawn="true" if="$(arg mem_monitor)"/>
-    <node name="ntp_monitor" pkg="system_monitor" type="ntp_monitor.py"
+    <node name="ntp_monitor" pkg="ros_system_monitor" type="ntp_monitor.py"
       output="$(arg output)" respawn="true" if="$(arg ntp_monitor)"/>
-    <node name="net_monitor" pkg="system_monitor" type="net_monitor.py"
+    <node name="net_monitor" pkg="ros_system_monitor" type="net_monitor.py"
       output="$(arg output)" respawn="true" if="$(arg net_monitor)"/>
   </group>
   
   <rosparam command="load" file="$(arg config_file)"
-    ns="system_monitor/$(arg machine_name)"/>
+    ns="ros_system_monitor/$(arg machine_name)"/>
 </launch>
 
