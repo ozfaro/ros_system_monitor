@@ -1,5 +1,5 @@
 <package>
-  <name>system_monitor</name>
+  <name>ros_system_monitor</name>
   <version>0.1.0</version>
   <description>
     System monitoring tools for ROS
