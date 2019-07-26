@@ -16,3 +16,7 @@ catkin_install_python(PROGRAMS bin/cpu_monitor.py bin/hdd_monitor.py bin/mem_mon
 install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch/
 )
+
+install(DIRECTORY config/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config/
+)
